@@ -57,6 +57,7 @@ local function Main()
 	firesignal(game:GetService("Players").LocalPlayer.PlayerGui.MainMenu.Menu.Left.Buttons.APlay.MouseButton1Click)
 	firesignal(game:GetService("Players").LocalPlayer.PlayerGui.MainMenu.APlay.IslandSelection.IslandButtons["KOil Rig"].MouseButton1Click)
 	repeat
+		wait()
 		mousemoveabs(20, 20) 
 		mouse1click()
 	until(sWorkspace:FindFirstChild("OilRigChunk"))
