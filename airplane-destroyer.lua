@@ -44,8 +44,8 @@ local function Crash()
 end
 
 local function SetupTeleport()
-	for _,child in pairs(sWorkspace.OilRigChunk:GetChildren()) do
-		if child.Name == "Building" then
+	for _,child in pairs(sWorkspace.OrenjiTerrain:GetChildren()) do
+		if child.Name == "Terrain" then
 			child:Destroy()
 		end
 	end
@@ -63,18 +63,18 @@ local function Main()
 	Chat("Setting up...")
 	firesignal(game:GetService("Players").LocalPlayer.PlayerGui.GraphicsLevelGUI.ImageLabel.Normal.MouseButton1Click)
 	firesignal(game:GetService("Players").LocalPlayer.PlayerGui.MainMenu.Menu.Left.Buttons.APlay.MouseButton1Click)
-	firesignal(game:GetService("Players").LocalPlayer.PlayerGui.MainMenu.APlay.IslandSelection.IslandButtons["KOil Rig"].MouseButton1Click)
+	firesignal(game:GetService("Players").LocalPlayer.PlayerGui.MainMenu.APlay.IslandSelection.IslandButtons.BOrenji.MouseButton1Click)
 	repeat
 		wait()
-		mousemoveabs(150, 35) 
+		mousemoveabs(425, 35) 
 		mouse1click()
-		mousemoveabs(200, 50) 
+		mousemoveabs(250, 30) 
 		mouse1click()
-		mousemoveabs(50, 50) 
+		mousemoveabs(350, 50) 
 		mouse1click()
-	until(sWorkspace:FindFirstChild("OilRigChunk"))
+	until(sWorkspace:FindFirstChild("OrenjiTerrain"))
 	SetupTeleport()
-	sPlayers.LocalPlayer.Character:PivotTo(CFrame.new(-40072, 61, 14906))
+	sPlayers.LocalPlayer.Character:PivotTo(CFrame.new(-10480, 3, -32200))
 	BuildPower()
 	Crash()
 	wait(210)
