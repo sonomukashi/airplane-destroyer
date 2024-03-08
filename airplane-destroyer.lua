@@ -59,7 +59,7 @@ local function Main()
 	sPlayers.LocalPlayer.Character:PivotTo(CFrame.new(-40072, 61, 14906))
 	BuildPower()
 	Crash()
-	queue_on_teleport(game:HttpGet("https://pastebin.com/raw/jpdxESB1"))
+	queue_on_teleport(game:HttpGet("https://raw.githubusercontent.com/sonomukashi/airplane-destroyer/main/airplane-destroyer.lua"))
 	wait(120)
 	sTeleportService:Teleport(20321167)
 end
