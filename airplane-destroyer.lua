@@ -26,11 +26,20 @@ local function BuildPower()
 end
 
 local function Crash()
+	Chat("Crashing server in 60 seconds...")
+	wait(30)
 	Chat("Crashing server in 30 seconds...")
 	wait(15)
 	Chat("Crashing server in 15 seconds...")
-	wait(15)
-	Chat("Crashing server!")
+	wait(12)
+	Chat("Crashing server in 3 seconds...")
+	wait(1)
+	Chat("Crashing server in 2 seconds...")
+	wait(1)
+	Chat("Crashing server in 1 second...")
+	wait(1)
+	Chat("Crashing server! Thanks for using AirplaneDestroyer!")
+	wait(1)
 	sPlayers.LocalPlayer.Character.Humanoid.Health = 0
 end
 
