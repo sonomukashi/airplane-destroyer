@@ -27,7 +27,10 @@ end
 
 local function Crash()
 	Chat("Crashing server in 30 seconds...")
-	wait(30)
+	wait(15)
+	Chat("Crashing server in 15 seconds...")
+	wait(15)
+	Chat("Crashing server!")
 	sPlayers.LocalPlayer.Character.Humanoid.Health = 0
 end
 
@@ -52,8 +55,11 @@ local function Main()
 	firesignal(game:GetService("Players").LocalPlayer.PlayerGui.GraphicsLevelGUI.ImageLabel.Normal.MouseButton1Click)
 	firesignal(game:GetService("Players").LocalPlayer.PlayerGui.MainMenu.Menu.Left.Buttons.APlay.MouseButton1Click)
 	firesignal(game:GetService("Players").LocalPlayer.PlayerGui.MainMenu.APlay.IslandSelection.IslandButtons["KOil Rig"].MouseButton1Click)
-	mousemoveabs(35, 195)  
-	mouse1click()
+	for i=1,10
+		wait()
+		mousemoveabs(20, 20) 
+		mouse1click()
+	end
 	wait(30)
 	SetupTeleport()
 	sPlayers.LocalPlayer.Character:PivotTo(CFrame.new(-40072, 61, 14906))
