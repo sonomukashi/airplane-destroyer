@@ -49,15 +49,14 @@ end
 local function Main()
 	print("AirplaneDestroyer loading...")
 	wait(30)
-	Chat("AirplaneDestroyer by ID17 loaded.")
-	Chat("The process is automatic.")
-	Chat("Please redirect any concerns or comments to ID17.")
-	Chat("Setting up...")
+	--Chat("AirplaneDestroyer by ID17 loaded.")
+	--Chat("The process is automatic.")
+	--Chat("Please redirect any concerns or comments to ID17.")
+	--Chat("Setting up...")
 	firesignal(game:GetService("Players").LocalPlayer.PlayerGui.GraphicsLevelGUI.ImageLabel.Normal.MouseButton1Click)
 	firesignal(game:GetService("Players").LocalPlayer.PlayerGui.MainMenu.Menu.Left.Buttons.APlay.MouseButton1Click)
 	firesignal(game:GetService("Players").LocalPlayer.PlayerGui.MainMenu.APlay.IslandSelection.IslandButtons["KOil Rig"].MouseButton1Click)
-	for i=1,10 do
-		wait()
+	until sWorkspace:FindFirstChild("OilRigChunk") do
 		mousemoveabs(20, 20) 
 		mouse1click()
 	end
