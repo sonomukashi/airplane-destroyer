@@ -22,7 +22,7 @@ local function BuildPower()
         wait()
     end
 	Chat("Building power... Done!")
-	wait(5)
+	wait(15)
 end
 
 local function Crash()
@@ -43,10 +43,6 @@ local function Crash()
 	sPlayers.LocalPlayer.Character.Humanoid.Health = 0
 end
 
-local function Lag()
-	
-end
-
 local function SetupTeleport()
 	for _,child in pairs(sWorkspace.OilRigChunk:GetChildren()) do
 		if child.Name == "Building" then
@@ -56,7 +52,7 @@ local function SetupTeleport()
 end
  
 local function Main()
-	print("AirplaneDestroyer loading...")
+	print("AirplaneDestroyer by ID17 loading...")
 	wait(30)
 	Chat("AirplaneDestroyer by ID17 loaded.")
 	wait(0.1)
