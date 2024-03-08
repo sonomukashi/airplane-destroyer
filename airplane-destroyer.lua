@@ -47,6 +47,7 @@ local function SetupTeleport()
 end
  
 local function Main()
+	print("AirplaneDestroyer loading...")
 	wait(30)
 	Chat("AirplaneDestroyer by ID17 loaded.")
 	Chat("The process is automatic.")
