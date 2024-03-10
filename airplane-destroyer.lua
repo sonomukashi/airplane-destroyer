@@ -9,27 +9,31 @@ end
 
 local function BuildPower()
 	Chat("Building power... starting")
-    local gliderRemote = sPlayers.LocalPlayer.Backpack.Parachute.CreateGlider
-    for i = 1,1250 do
+	appendfile("chatlog.txt", "\nBuilding power...")
+    	local gliderRemote = sPlayers.LocalPlayer.Backpack.Parachute.CreateGlider
+    	for i = 1,1250 do
 		if i == 750 then
 			Chat("Building power... halfway done")
 		end
 		if i == 1000 then
 			Chat("Building power... almost done")
 		end
-        gliderRemote:FireServer()
-        wait()
-    end
+        	gliderRemote:FireServer()
+        	wait()
+    	end
 	Chat("Building power... Done!")
 	wait(15)
 end
 
 local function Crash()
+	appendfile("chatlog.txt", "\nCrashing in 60 seconds...")
 	Chat("Crashing server in 60 seconds...")
 	wait(30)
 	Chat("Crashing server in 30 seconds...")
+	appendfile("chatlog.txt", "\nCrashing in 30 seconds...")
 	wait(15)
 	Chat("Crashing server in 15 seconds...")
+	appendfile("chatlog.txt", "\nCrashing in 15 seconds...")
 	wait(12)
 	Chat("Crashing server in 3 seconds...")
 	wait(1)
@@ -37,6 +41,7 @@ local function Crash()
 	wait(1)
 	Chat("Crashing server in 1 second...")
 	wait(1)
+	appendfile("chatlog.txt", "\nCrashed!")
 	Chat("Crashing server! Thanks for using AirplaneDestroyer!")
 	wait(1)
 	sPlayers.LocalPlayer.Character.Humanoid.Health = 0
@@ -66,6 +71,7 @@ end
  
 local function Main()
 	print("AirplaneDestroyer by ID17 loading...")
+	appendfile("chatlog.txt", "\nAirplaneDestroyer loading...")
 	wait(30)
 	Chat("AirplaneDestroyer by ID17 loaded.")
 	wait(0.1)
