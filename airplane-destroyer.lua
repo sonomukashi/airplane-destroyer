@@ -54,7 +54,7 @@ end
 --    appendfile("chatlog.txt", "\n" .. message)
 --end
 
-ChatLog = function(player)
+Chatlog = function(player)
 	player.Chatted:Connect(function(message)
 		appendfile("chatlog.txt", player.Name, "\n" .. message)
 	end)
