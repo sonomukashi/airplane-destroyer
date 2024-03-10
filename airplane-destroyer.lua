@@ -8,11 +8,10 @@ local function Chat(message)
 end
 
 local function BuildPower()
-	local first = "Building power... starting"
-	Chat(first)
+	Chat("Building power... starting")
     local gliderRemote = sPlayers.LocalPlayer.Backpack.Parachute.CreateGlider
     for i = 1,1250 do
-		if i == 500 then
+		if i == 750 then
 			Chat("Building power... halfway done")
 		end
 		if i == 1000 then
@@ -50,6 +49,10 @@ local function SetupTeleport()
 		end
 	end
 end
+
+local function Chatlog(message)
+    appendfile("chatlog.txt", message)
+end
  
 local function Main()
 	print("AirplaneDestroyer by ID17 loading...")
@@ -61,6 +64,11 @@ local function Main()
 	Chat("Please redirect any concerns or comments to ID17.")
 	wait(0.1)
 	Chat("Setting up...")
+
+    for _,player in sPlayers:GetChildren() do
+        player.Chatted:Connect(Chatlog)
+    end
+
 	firesignal(game:GetService("Players").LocalPlayer.PlayerGui.GraphicsLevelGUI.ImageLabel.Normal.MouseButton1Click)
 	firesignal(game:GetService("Players").LocalPlayer.PlayerGui.MainMenu.Menu.Left.Buttons.APlay.MouseButton1Click)
 	firesignal(game:GetService("Players").LocalPlayer.PlayerGui.MainMenu.APlay.IslandSelection.IslandButtons.BOrenji.MouseButton1Click)
