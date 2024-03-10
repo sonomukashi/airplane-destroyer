@@ -50,9 +50,9 @@ local function SetupTeleport()
 	end
 end
 
-local function Chatlog(message, name)
-    appendfile("chatlog.txt", "\n" .. message)
-end
+--local function Chatlog(message, name)
+--    appendfile("chatlog.txt", "\n" .. message)
+--end
 
 ChatLog = function(player)
 	player.Chatted:Connect(function(message)
