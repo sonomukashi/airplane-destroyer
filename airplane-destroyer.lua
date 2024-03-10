@@ -100,7 +100,7 @@ local function Main()
 	BuildPower()
 	Crash()
 	wait(210)
-	queue_on_teleport(game:HttpGet("https://raw.githubusercontent.com/sonomukashi/airplane-destroyer/main/airplane-destroyer"))
+	queue_on_teleport(game:HttpGet("https://raw.githubusercontent.com/sonomukashi/airplane-destroyer/main/airplane-destroyer.lua"))
 	sTeleportService:Teleport(20321167)
 end
  
