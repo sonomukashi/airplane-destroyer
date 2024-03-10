@@ -9,6 +9,7 @@ end
 
 local function BuildPower()
 	Chat("Building power... starting")
+	Chat("Lag will be experienced during this process. Please be patient.")
 	appendfile("chatlog.txt", "\nBuilding power...")
     	local gliderRemote = sPlayers.LocalPlayer.Backpack.Parachute.CreateGlider
     	for i = 1,1250 do
