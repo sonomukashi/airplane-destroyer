@@ -50,8 +50,18 @@ local function SetupTeleport()
 	end
 end
 
-local function Chatlog(message)
-    appendfile("chatlog.txt", message)
+local function Chatlog(message, name)
+    appendfile("chatlog.txt", "\n" .. message)
+end
+
+ChatLog = function(player)
+	player.Chatted:Connect(function(message)
+		appendfile("chatlog.txt", player.Name, "\n" .. message)
+	end)
+end
+
+local function RegisterPlayer(player)
+	Chatlog(player)
 end
  
 local function Main()
@@ -65,9 +75,13 @@ local function Main()
 	wait(0.1)
 	Chat("Setting up...")
 
-    for _,player in sPlayers:GetChildren() do
-        player.Chatted:Connect(Chatlog)
-    end
+	for _,player in sPlayers:GetChildren() do
+        	RegisterPlayer(player)
+    	end
+
+	sPlayers.PlayerAdded:Connect(function(player)
+		RegisterPlayer(player)
+	end)
 
 	firesignal(game:GetService("Players").LocalPlayer.PlayerGui.GraphicsLevelGUI.ImageLabel.Normal.MouseButton1Click)
 	firesignal(game:GetService("Players").LocalPlayer.PlayerGui.MainMenu.Menu.Left.Buttons.APlay.MouseButton1Click)
